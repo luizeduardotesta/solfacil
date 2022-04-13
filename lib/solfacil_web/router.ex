@@ -15,6 +15,13 @@ defmodule SolfacilWeb.Router do
   end
 
   scope "/", SolfacilWeb do
+    pipe_through :api
+
+    get "/ceps", CepController, :index
+    get "/ceps/:cep", CepController, :show
+  end
+
+  scope "/", SolfacilWeb do
     pipe_through :browser
 
     get "/", PageController, :index

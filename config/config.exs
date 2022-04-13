@@ -17,6 +17,11 @@ config :solfacil, SolfacilWeb.Endpoint,
   pubsub_server: Solfacil.PubSub,
   live_view: [signing_salt: "1I4euU0z"]
 
+  config :solfacil, Oban,
+  repo: Solfacil.Repo,
+  plugins: [Oban.Plugins.Pruner],
+  queues: [default: 10, events: 50, media: 20]
+
 # Configures the mailer
 #
 # By default it uses the "Local" adapter which stores the emails
