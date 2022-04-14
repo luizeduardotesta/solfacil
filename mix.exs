@@ -50,8 +50,7 @@ defmodule Solfacil.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:finch, "~> 0.11"},
-      {:oban, "~> 2.11"},
-      {:nimble_csv, "~> 1.1"}
+      {:oban, "~> 2.11"}
     ]
   end
 

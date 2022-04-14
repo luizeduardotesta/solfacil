@@ -3,6 +3,7 @@ defmodule SolfacilWeb.CepController do
 
   alias CepClient.CepFinder
   alias Solfacil.Ceps
+  alias Solfacil.Oban.Worker
 
   def show(conn, %{"cep" => cep} = _params) do
     case Ceps.get_cep_by_number(cep) do
@@ -21,8 +22,11 @@ defmodule SolfacilWeb.CepController do
     end
   end
 
-  def index(conn, _params) do
-    ceps = Ceps.list_ceps()
-    render(conn, "index.json", cep: ceps)
+  def csv_sender(conn, %{"email" => email}) do
+    %{"email" => email}
+    |> Worker.new()
+    |> Oban.insert()
+
+    render(conn, "sender.json")
   end
 end

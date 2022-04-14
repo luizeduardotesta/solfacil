@@ -17,7 +17,7 @@ config :solfacil, SolfacilWeb.Endpoint,
   pubsub_server: Solfacil.PubSub,
   live_view: [signing_salt: "1I4euU0z"]
 
-  config :solfacil, Oban,
+config :solfacil, Oban,
   repo: Solfacil.Repo,
   plugins: [Oban.Plugins.Pruner],
   queues: [default: 10, events: 50, media: 20]
@@ -33,6 +33,8 @@ config :solfacil, Solfacil.Mailer, adapter: Swoosh.Adapters.Local
 
 # Swoosh API client is needed for adapters other than SMTP.
 config :swoosh, :api_client, false
+
+config :swoosh, serve_mailbox: true, preview_port: 4001
 
 # Configure esbuild (the version is required)
 config :esbuild,

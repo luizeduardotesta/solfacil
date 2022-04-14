@@ -2,8 +2,6 @@ defmodule Solfacil.Ceps do
   alias Solfacil.Repo
   alias Solfacil.Ceps.Cep
 
-  import Ecto.Query
-
   def get_cep_by_number(cep) do
     case Repo.get_by(Cep, cep: cep) do
       nil -> {:error, :not_found}
@@ -17,17 +15,9 @@ defmodule Solfacil.Ceps do
     |> Repo.insert!()
   end
 
-  def get_cep_from_data(cep) do
-    from(
-      u in Cep,
-      where: u.cep == ^cep
-    )
-    |> Repo.all()
-  end
-
   def get_cep(id), do: Repo.get(Cep, id)
 
-  def list_ceps do
+  def list_ceps() do
     Repo.all(Cep)
   end
 

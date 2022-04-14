@@ -11,4 +11,3 @@
 # and so on) as they will fail if something goes wrong.
 
 # Seed `ceps` table from CSV
-Solfacil.Ceps.CSVUtil.column_data("priv/repo/data/ceps.csv")

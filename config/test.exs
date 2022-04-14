@@ -29,4 +29,4 @@ config :logger, level: :warn
 # Initialize plugs at runtime for faster test compilation
 config :phoenix, :plug_init_mode, :runtime
 
-config :my_app, Oban, queues: false, plugins: false
+config :solfacil, Oban, queues: false, plugins: false

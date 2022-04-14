@@ -11,4 +11,8 @@ defmodule SolfacilWeb.CepView do
       cep: cep.cep
     }
   end
+
+  def render("sender.json", _) do
+    "Email Sended"
+  end
 end

@@ -17,7 +17,7 @@ defmodule SolfacilWeb.Router do
   scope "/", SolfacilWeb do
     pipe_through :api
 
-    get "/ceps", CepController, :index
+    get "/ceps/csv/:email", CepController, :csv_sender
     get "/ceps/:cep", CepController, :show
   end
 
