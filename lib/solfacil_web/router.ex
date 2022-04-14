@@ -14,11 +14,22 @@ defmodule SolfacilWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :authentication do
+    plug Guardian.Plug.Pipeline,
+      module: Solfacil.Guardian,
+      error_handler: SolfacilWeb.FallbackController
+
+    plug Guardian.Plug.VerifyHeader, claims: %{"typ" => "access"}
+    plug Guardian.Plug.EnsureAuthenticated
+    plug Guardian.Plug.LoadResource
+  end
+
   scope "/", SolfacilWeb do
     pipe_through :api
 
     get "/ceps/csv/:email", CepController, :csv_sender
     get "/ceps/:cep", CepController, :show
+    post "/users/log_in", UserSessionController, :create
   end
 
   scope "/", SolfacilWeb do

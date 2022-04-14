@@ -11,7 +11,7 @@ defmodule Solfacil.Ceps.TransformCSV do
   end
 
   defp parse_cep_as_csv(ceps_list) do
-    headers = "logradouro; bairro; complemento; localidade; uf; cep; inserted_at; updated_at\n"
+    headers = "id; logradouro; bairro; complemento; localidade; uf; cep; inserted_at; updated_at\n"
 
     lines =
       Enum.map(ceps_list, fn e ->

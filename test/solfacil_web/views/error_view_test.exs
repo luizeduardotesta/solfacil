@@ -11,4 +11,8 @@ defmodule SolfacilWeb.ErrorViewTest do
   test "renders 500.html" do
     assert render_to_string(SolfacilWeb.ErrorView, "500.html", []) == "Internal Server Error"
   end
+
+  test "render 401.json" do
+    assert render_to_string(SolfacilWeb.ErrorView, "401.json", []) == "{\"error\":{\"detail\":\"unauthorized\"}}"
+  end
 end

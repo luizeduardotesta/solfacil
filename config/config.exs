@@ -22,6 +22,10 @@ config :solfacil, Oban,
   plugins: [Oban.Plugins.Pruner],
   queues: [default: 10, events: 50, media: 20]
 
+  config :solfacil, Solfacil.Guardian,
+       issuer: "solfacil",
+       secret_key: "mxhbB+m8oeMCyif6vw7hR7s0+zvn4uCv9SlKkLs1W5QxzFez/lOUJuhZxOQe5fBM"
+
 # Configures the mailer
 #
 # By default it uses the "Local" adapter which stores the emails
