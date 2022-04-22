@@ -5,7 +5,8 @@ defmodule Solfacil.CepsTest do
 
   describe "get_cep_by_number/1" do
     test "Success when existent cep" do
-      Ceps.create_cep(%{logradouro: "logradouro",
+      Ceps.create_cep(%{
+        logradouro: "logradouro",
         bairro: "bairro",
         complemento: "complemento",
         localidade: "localidade",
@@ -28,13 +29,14 @@ defmodule Solfacil.CepsTest do
 
   describe "list_ceps/0" do
     test "Returns all ceps" do
-      valid_cep = %{logradouro: "logradouro",
-      bairro: "bairro",
-      complemento: "complemento",
-      localidade: "localidade",
-      uf: "uf",
-      cep: "12345678"
-    }
+      valid_cep = %{
+        logradouro: "logradouro",
+        bairro: "bairro",
+        complemento: "complemento",
+        localidade: "localidade",
+        uf: "uf",
+        cep: "12345678"
+      }
 
       cep = Ceps.create_cep(valid_cep)
 
@@ -44,12 +46,13 @@ defmodule Solfacil.CepsTest do
 
   describe "get_cep/1" do
     test "Success when get the cep by the id" do
-      valid_cep = %{logradouro: "logradouro",
-      bairro: "bairro",
-      complemento: "complemento",
-      localidade: "localidade",
-      uf: "uf",
-      cep: "12345678"
+      valid_cep = %{
+        logradouro: "logradouro",
+        bairro: "bairro",
+        complemento: "complemento",
+        localidade: "localidade",
+        uf: "uf",
+        cep: "12345678"
       }
 
       cep = Ceps.create_cep(valid_cep)
@@ -60,11 +63,12 @@ defmodule Solfacil.CepsTest do
 
   describe "create_cep/1" do
     test "Success when create a cep" do
-      valid_cep = %{logradouro: "logradouro",
-      bairro: "bairro",
-      localidade: "localidade",
-      uf: "uf",
-      cep: "12345678"
+      valid_cep = %{
+        logradouro: "logradouro",
+        bairro: "bairro",
+        localidade: "localidade",
+        uf: "uf",
+        cep: "12345678"
       }
 
       cep = Ceps.create_cep(valid_cep)
@@ -84,12 +88,14 @@ defmodule Solfacil.CepsTest do
 
   describe "update_cep/2" do
     test "Success when cep is upadated" do
-      valid_cep = %{logradouro: "logradouro",
-      bairro: "bairro",
-      localidade: "localidade",
-      uf: "uf",
-      cep: "12345678"
+      valid_cep = %{
+        logradouro: "logradouro",
+        bairro: "bairro",
+        localidade: "localidade",
+        uf: "uf",
+        cep: "12345678"
       }
+
       cep = Ceps.create_cep(valid_cep)
       update_attrs = %{cep: "12345679"}
 
@@ -98,12 +104,14 @@ defmodule Solfacil.CepsTest do
     end
 
     test "Error when invalid cep is updated" do
-      valid_cep = %{logradouro: "logradouro",
-      bairro: "bairro",
-      localidade: "localidade",
-      uf: "uf",
-      cep: "12345678"
+      valid_cep = %{
+        logradouro: "logradouro",
+        bairro: "bairro",
+        localidade: "localidade",
+        uf: "uf",
+        cep: "12345678"
       }
+
       cep = Ceps.create_cep(valid_cep)
       update_attrs = %{cep: nil}
 

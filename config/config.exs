@@ -22,9 +22,9 @@ config :solfacil, Oban,
   plugins: [Oban.Plugins.Pruner],
   queues: [default: 10, events: 50, media: 20]
 
-  config :solfacil, Solfacil.Guardian,
-       issuer: "solfacil",
-       secret_key: "mxhbB+m8oeMCyif6vw7hR7s0+zvn4uCv9SlKkLs1W5QxzFez/lOUJuhZxOQe5fBM"
+config :solfacil, Solfacil.Guardian,
+  issuer: "solfacil",
+  secret_key: "mxhbB+m8oeMCyif6vw7hR7s0+zvn4uCv9SlKkLs1W5QxzFez/lOUJuhZxOQe5fBM"
 
 # Configures the mailer
 #

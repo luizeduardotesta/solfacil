@@ -12,7 +12,7 @@ defmodule Solfacil.Oban.Worker do
     File.write!(filename, csv)
 
     SendMailerToUser.send_email(email, filename)
-    |> Solfacil.Mailer.deliver
+    |> Solfacil.Mailer.deliver()
 
     File.rm!(filename)
   end

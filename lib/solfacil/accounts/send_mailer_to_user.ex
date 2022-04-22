@@ -2,7 +2,6 @@ defmodule Solfacil.Accounts.SendMailerToUser do
   import Swoosh.Email
 
   def send_email(email, path) do
-
     new()
     |> to({"name", email})
     |> from({"Solfacil", "solfacil@example.com"})

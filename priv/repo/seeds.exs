@@ -38,6 +38,6 @@ cep_data = [
   }
 ]
 
-Enum.each(cep_data, fn(data) ->
+Enum.each(cep_data, fn data ->
   Ceps.create_cep(data)
 end)

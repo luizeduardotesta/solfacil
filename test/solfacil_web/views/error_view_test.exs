@@ -13,6 +13,7 @@ defmodule SolfacilWeb.ErrorViewTest do
   end
 
   test "render 401.json" do
-    assert render_to_string(SolfacilWeb.ErrorView, "401.json", []) == "{\"error\":{\"detail\":\"unauthorized\"}}"
+    assert render_to_string(SolfacilWeb.ErrorView, "401.json", []) ==
+             "{\"error\":{\"detail\":\"unauthorized\"}}"
   end
 end
